@@ -2,6 +2,7 @@ public class DistinctSubsequence {
     int res = 0;
     String str;
 
+    //TLE
     public int numDistinctRecursion(String s, String t) {
         str = t;
         isSame(s, 0, new boolean[s.length()], new StringBuilder());
@@ -26,6 +27,7 @@ public class DistinctSubsequence {
         }
     }
 
+    //Another implementation using Dp
     public int numDistinct(String s, String t) {
         int[][] arr = new int[s.length()][t.length()];
         for (int i = 0; i <= s.length(); i++) {
