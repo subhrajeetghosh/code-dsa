@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DecodeWays {
 
     // Bruteforce way with recursion
@@ -5,8 +7,10 @@ public class DecodeWays {
 
     public int decodeStringWays(String s) {
         // recForCount(s, 0);
-        recForCountSecondMethod(s, 0);
-        return count;
+        int[] arr = new int[s.length()];
+        Arrays.fill(arr, -1);
+        memorizationOnRecursionForCount(s, 0, arr);
+        return arr[0];
     }
 
     public void recForCount(String s, int start) {
@@ -36,28 +40,42 @@ public class DecodeWays {
         if (num == 0) {
             return;
         }
+        if (start <= s.length() - 2) {
+            int secondNum = Integer.parseInt(s.substring(start, start + 2));
+            if (secondNum < 27 && secondNum >= 10) {
+                recForCountSecondMethod(s, start + 2);
+            }
+        }
+        recForCountSecondMethod(s, start + 1);
+    }
+
+    // Memorization Solution
+
+    public int memorizationOnRecursionForCount(String s, int start, int[] arr) {
+        if (s.length() == start) {
+            return 1;
+        }
+        if (s.length() < start) {
+            return 0;
+        }
+        if (arr[start] != -1) {
+            return arr[start];
+        }
+        if (s.charAt(start) == '0') {
+            return arr[start] = 0;
+        }
         boolean isSecondNumValid = false;
         if (start <= s.length() - 2) {
             int secondNum = Integer.parseInt(s.substring(start, start + 2));
             if (secondNum < 27 && secondNum >= 10) {
                 isSecondNumValid = true;
-                recForCountSecondMethod(s, start + 1);
-                recForCountSecondMethod(s, start + 2);
+                arr[start] = memorizationOnRecursionForCount(s, start + 1, arr)
+                        + memorizationOnRecursionForCount(s, start + 2, arr);
             }
         }
         if (!isSecondNumValid) {
-            recForCountSecondMethod(s, start + 1);
+            arr[start] = memorizationOnRecursionForCount(s, start + 1, arr);
         }
-    }
-
-    // Memorization
-
-    public int memorizationOnRecursionForCount(String s, int start, int[] arr) {
-        if (s.length() >= start) {
-            return 0;
-        }
-        if (arr[start] != -1)
-            return arr[start];
         return arr[start];
     }
 
