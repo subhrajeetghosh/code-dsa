@@ -1,3 +1,8 @@
+/**
+ * https://leetcode.com/problems/add-digits/
+ * 
+ * @author Subhrajeet Ghosh
+ */
 public class AddDigit {
     public int addDigits(int num) {
         while(num/10 != 0) {
@@ -11,7 +16,3 @@ public class AddDigit {
         return num;
     }
 }
-
-/*
- * https://leetcode.com/problems/add-digits/
- */
