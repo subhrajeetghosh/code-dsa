@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-import CommonFile.TreeNode;
+import commonfile.TreeNode;
 
 /**
  * https://www.lintcode.com/problem/93/

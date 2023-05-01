@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 
-import CommonFile.TreeNode;
+import commonfile.TreeNode;
 
 public class MaxWidthBinaryTree {
 

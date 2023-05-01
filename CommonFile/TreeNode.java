@@ -1,4 +1,4 @@
-package CommonFile;
+package commonfile;
 
 /*
  * General Class For LeetCode Solution
