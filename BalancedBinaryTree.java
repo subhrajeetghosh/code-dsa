@@ -13,6 +13,7 @@ import CommonFile.TreeNode;
  */
 public class BalancedBinaryTree {
     Map<TreeNode, Integer> map = new HashMap<>();
+
     public boolean isBalanced(TreeNode root) {
         return testBalanceOfTree(root);
     }
@@ -20,14 +21,17 @@ public class BalancedBinaryTree {
     public boolean testBalanceOfTree(TreeNode node) {
         if (node == null)
             return true;
-        if(Math.abs(height(node.left)-height(node.right))>1) return false;
+        if (Math.abs(height(node.left) - height(node.right)) > 1)
+            return false;
         return testBalanceOfTree(node.left) && testBalanceOfTree(node.right);
     }
 
     public int height(TreeNode node) {
-        if(node == null) return 0;
-        if(map.containsKey(node)) return map.get(node);
-        map.put(node, 1+Math.max(height(node.left), height(node.right)));
+        if (node == null)
+            return 0;
+        if (map.containsKey(node))
+            return map.get(node);
+        map.put(node, 1 + Math.max(height(node.left), height(node.right)));
         return map.get(node);
     }
 }
