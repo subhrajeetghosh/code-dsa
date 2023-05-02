@@ -47,6 +47,9 @@ public class FindTargetHowSum {
         return map.get(target);
     }
 
+    //Different Implementation
+    
+
     public static void main(String[] args) {
         int[] arr = { 7, 3, 5 };
         List<Integer> lst = new FindTargetHowSum().findTargetHowSumArray(8, arr);
