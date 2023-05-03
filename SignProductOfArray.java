@@ -4,7 +4,7 @@
  * @author Subhrajeet Ghosh
  */
 public class SignProductOfArray {
-    //this way it will take maximum time and space
+    // this way it will take maximum time and space
     public int arraySign(int[] nums) {
         long M = 1000000007;
         long product = 1;
