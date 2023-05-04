@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class DifferenceOfTwoArray {
-    //Brute Force
+    // Brute Force
     public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
@@ -28,5 +29,23 @@ public class DifferenceOfTwoArray {
         listOfReturn.add(List.copyOf(li1));
         listOfReturn.add(List.copyOf(li2));
         return listOfReturn;
+    }
+
+    public List<List<Integer>> findDifference_2ndMethod(int[] nums1, int[] nums2) {
+        return Arrays.asList(getUniqueList(nums1, nums2), getUniqueList(nums2, nums1));
+    }
+
+    public List<Integer> getUniqueList(int[] nums1, int[] nums2) {
+        Set<Integer> set = new HashSet<>();
+        Set<Integer> onlyInNums1 = new HashSet<>();
+        for (int i = 0; i < nums2.length; i++) {
+            set.add(nums2[i]);
+        }
+        for (int i = 0; i < nums1.length; i++) {
+            if (!set.contains(nums1[i])) {
+                onlyInNums1.add(nums1[i]);
+            }
+        }
+        return new ArrayList<>(onlyInNums1);
     }
 }
