@@ -1,5 +1,8 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
- * https://leetcode.com/problems/dota2-senate
+ * {@link} https://leetcode.com/problems/dota2-senate
  * 
  * @author Subhrajeet Ghosh
  */
@@ -29,7 +32,6 @@ public class Dota2Senate {
                         }
                         if (isDestroyed[checkPointDecider]) {
                             checkPointDecider++;
-
                         } else {
                             break;
                         }
@@ -50,6 +52,31 @@ public class Dota2Senate {
             }
         }
         return senate.charAt(checkPoint) == 'R' ? "Radiant" : "Dire";
+    }
+
+    // Queue Logic
+    public String predictPartyVictory_2ndMethod(String senate) {
+        Queue<Integer> qu1 = new LinkedList<Integer>();
+        Queue<Integer> qu2 = new LinkedList<Integer>();
+        for (int i = 0; i < senate.length(); i++) {
+            if (senate.charAt(i) == 'R') {
+                qu1.add(i);
+            } else {
+                qu2.add(i);
+            }
+        }
+        while (!qu1.isEmpty() && !qu2.isEmpty()) {
+            if (qu1.peek() < qu2.peek()) {
+                int currentWinner = qu1.poll() + senate.length();
+                qu2.poll();
+                qu1.offer(currentWinner);
+            } else {
+                int currentWinner = qu2.poll() + senate.length();
+                qu1.poll();
+                qu2.offer(currentWinner);
+            }
+        }
+        return qu1.isEmpty() ? "Dire" : "Radiant";
     }
 
     public static void main(String[] args) {
