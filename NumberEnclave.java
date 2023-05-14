@@ -1,4 +1,8 @@
-
+/**
+ * https://leetcode.com/problems/number-of-enclaves/description/
+ * 
+ * @author Subhrajeet Ghosh
+ */
 public class NumberEnclave {
     public int numEnclaves(int[][] grid) {
         for(int i=0; i<grid.length; i++) {
@@ -28,16 +32,4 @@ public class NumberEnclave {
             dfs(grid, i, j-1);
         }
     }
-    public static void main(String[] args) {
-        
-    }
 }
-
-
-
-/*
- * 
- * https://leetcode.com/problems/number-of-enclaves/description/
- * 
- * 
- */
