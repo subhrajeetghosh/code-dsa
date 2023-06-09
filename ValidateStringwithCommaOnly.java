@@ -1,15 +1,19 @@
-import java.util.Arrays;
-import java.util.List;
+import java.util.regex.Pattern;
 
 public class ValidateStringwithCommaOnly {
     public static boolean isValid(String str) {
-        String regex = "^\\d+(\\s*,\\s*\\d+)*$";
+        String regex = "^\\s*[a-zA-Z0-9]+(?:\\s*,\\s*[a-zA-Z0-9]+)*\\s*$";
 
         return str.matches(regex);
     }
 
     public static void returnListOfStringFromString(String str) {
-        List<String> ls = Arrays.asList(str.split("\\s*,\\s*"));
+        String[] ls = Pattern.compile("\\s*,\\s*")
+        .splitAsStream(str)
+        .map(String::trim)
+        .toArray(String[]::new);
+
+        System.out.println(ls.length);
         
         for (String string : ls) {
             System.out.println(string);
@@ -17,7 +21,7 @@ public class ValidateStringwithCommaOnly {
     }
 
     public static void main(String[] args) {
-        returnListOfStringFromString("24,  324, 2335 , 123,214");
-        System.out.println(isValid("24,  324, 2335 , 123,214"));
+        returnListOfStringFromString("2342");
+        System.out.println(isValid("kjnfs4342, SFSD54353, 53453"));
     }
 }

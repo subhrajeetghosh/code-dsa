@@ -31,7 +31,7 @@ public class SubSeqSomeCondition {
         return count;
     }
 
-    // Optimized approched
+    // Brute Force
     public int numSubseq_2ndMethod(int[] nums, int target) {
         int count = 0;
         int modulo = 1_000_000_007;
@@ -57,6 +57,27 @@ public class SubSeqSomeCondition {
         return count;
     }
 
+    // Optimized approched Binary Search
+    public int numSubseq_3rdMethod(int[] nums, int target) {
+        int count = 0;
+        int modulo = 1_000_000_007;
+        int len = nums.length;
+        Arrays.sort(nums);
+        int[] pow = new int[len];
+        pow[0] = 1;
+        for (int i = 1; i < len; i++) {
+            pow[i] = (pow[i - 1] * 2) % modulo;
+        }
+        for (int i = 0; i < len; i++) {
+            int right = binarySearch(nums, target - i) - 1;
+            if (right >= i) {
+                count += pow[right - i];
+                count %= modulo;
+            }
+        }
+        return count;
+    }
+
     public int binarySearch(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
@@ -74,6 +95,6 @@ public class SubSeqSomeCondition {
     }
 
     public static void main(String[] args) {
-        System.out.println(new SubSeqSomeCondition().numSubseq(new int[] { 3, 5, 6, 7 }, 9));
+        System.out.println(new SubSeqSomeCondition().numSubseq_3rdMethod(new int[] { 3, 5, 7, 9 }, 9));
     }
 }
