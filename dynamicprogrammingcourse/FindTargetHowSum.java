@@ -1,4 +1,4 @@
-package dynamicprogramming;
+package dynamicprogrammingcourse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,8 +47,7 @@ public class FindTargetHowSum {
         return map.get(target);
     }
 
-    //Different Implementation
-    
+    // Different Implementation
 
     public static void main(String[] args) {
         int[] arr = { 7, 3, 5 };
