@@ -66,10 +66,11 @@ public class SubSeqSomeCondition {
         int[] pow = new int[len];
         pow[0] = 1;
         for (int i = 1; i < len; i++) {
-            pow[i] = (pow[i - 1] * 2) % modulo;
+            pow[i] = pow[i - 1] * 2;
+            pow[i] %= modulo;
         }
         for (int i = 0; i < len; i++) {
-            int right = binarySearch(nums, target - i) - 1;
+            int right = binarySearch(nums, target - nums[i]) - 1;
             if (right >= i) {
                 count += pow[right - i];
                 count %= modulo;
@@ -82,13 +83,11 @@ public class SubSeqSomeCondition {
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (nums[mid] == target)
-                return mid;
-            if (nums[mid] > target) {
-                right = mid - 1;
-            } else {
+            int mid = left + ((right - left) / 2);
+            if (nums[mid] <= target) {
                 left = mid + 1;
+            } else {
+                right = mid - 1;
             }
         }
         return left;
