@@ -1,7 +1,9 @@
 package dynamicprogrammingcourse;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Write a function canSum(arr, target) that takes in targetSum and an array of
@@ -16,13 +18,64 @@ import java.util.List;
  */
 
 public class FindSortestTargetSum {
-    public List<Integer> finsTargetSumArray(int[] nums, int target) {
-        if(nums.length == 0) return new ArrayList<>();
+    int count = 0;
+    Map<Integer, List<Integer>> map = new HashMap<>();
+    List<Integer> result;
 
-        return null;
+    public List<Integer> finsTargetSumArray(int[] nums, int target) {
+        if (nums.length == 0)
+            return new ArrayList<>();
+        // findSortestPath(nums, 0, new ArrayList<>(), target, 0);
+        result = findSortestPath_2ndMethod(nums, target);
+        return result;
     }
-    
+
+    private void findSortestPath(int[] nums, int index, List<Integer> currentItem,
+            int target, int currentCount) {
+        if (target == 0 && (count == 0 || count > currentCount)) {
+            count = currentCount;
+            result = new ArrayList<>(currentItem);
+        }
+        if (index >= nums.length || (count != 0 && count <= currentCount) || target < 0) {
+            return;
+        }
+        List<Integer> newCurrnetItem = new ArrayList<>(currentItem);
+        newCurrnetItem.add(nums[index]);
+        findSortestPath(nums, index, newCurrnetItem, target - nums[index], currentCount + 1);
+        findSortestPath(nums, index + 1, newCurrnetItem, target - nums[index], currentCount + 1);
+        findSortestPath(nums, index + 1, currentItem, target, currentCount);
+    }
+
+    // Momorization
+    private List<Integer> findSortestPath_2ndMethod(int[] nums, int target) {
+        if (map.containsKey(target)) {
+            return map.get(target);
+        }
+        if (target == 0) {
+            return new ArrayList<>();
+        } else if (target < 0) {
+            return null;
+        }
+        List<Integer> sortestPathList = null;
+        for (int num : nums) {
+            int newTarget = target - num;
+            List<Integer> combinationList = findSortestPath_2ndMethod(nums, newTarget);
+            if (combinationList != null) {
+                combinationList.add(num);
+                if (sortestPathList == null || sortestPathList.size() > combinationList.size()) {
+                    sortestPathList = new ArrayList<>(combinationList);
+                }
+            }
+        }
+        map.put(target, sortestPathList);
+        return map.get(target);
+    }
+
     public static void main(String[] args) {
-        
+        int[] arr = { 2, 3, 5 };
+        List<Integer> listOfSmallestData = new FindSortestTargetSum().finsTargetSumArray(arr, 8);
+        for (Integer integer : listOfSmallestData) {
+            System.out.print(integer + " ");
+        }
     }
 }
