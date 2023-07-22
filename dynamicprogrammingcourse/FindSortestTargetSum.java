@@ -67,8 +67,11 @@ public class FindSortestTargetSum {
                 }
             }
         }
-        map.put(target, sortestPathList);
-        return map.get(target);
+        if (sortestPathList == null) {
+            sortestPathList = new ArrayList<>();
+        }
+        map.put(target, new ArrayList<>(sortestPathList));
+        return sortestPathList;
     }
 
     public static void main(String[] args) {
