@@ -29,7 +29,7 @@ public class FindSortestTargetSum {
         return result;
     }
 
-    private void findSortestPath(int[] nums, int index, List<Integer> currentItem,
+    public void findSortestPath(int[] nums, int index, List<Integer> currentItem,
             int target, int currentCount) {
         if (target == 0 && (count == 0 || count > currentCount)) {
             count = currentCount;
@@ -46,7 +46,7 @@ public class FindSortestTargetSum {
     }
 
     // Momorization
-    private List<Integer> findSortestPath_2ndMethod(int[] nums, int target) {
+    public List<Integer> findSortestPath_2ndMethod(int[] nums, int target) {
         if (map.containsKey(target)) {
             return map.get(target);
         }
@@ -75,7 +75,6 @@ public class FindSortestTargetSum {
 
     public static void main(String[] args) {
         int[] arr = { 2, 3, 5 };
-        new FindSortestTargetSum().findSortestPath(arr, 0, new ArrayList<>(), 8, 0);
 
         List<Integer> listOfSmallestData = new FindSortestTargetSum().finsTargetSumArray(arr, 8);
         for (Integer integer : listOfSmallestData) {
