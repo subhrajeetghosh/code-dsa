@@ -25,7 +25,6 @@ public class FindSortestTargetSum {
     public List<Integer> finsTargetSumArray(int[] nums, int target) {
         if (nums.length == 0)
             return new ArrayList<>();
-        // findSortestPath(nums, 0, new ArrayList<>(), target, 0);
         result = findSortestPath_2ndMethod(nums, target);
         return result;
     }
@@ -76,6 +75,8 @@ public class FindSortestTargetSum {
 
     public static void main(String[] args) {
         int[] arr = { 2, 3, 5 };
+        new FindSortestTargetSum().findSortestPath(arr, 0, new ArrayList<>(), 8, 0);
+
         List<Integer> listOfSmallestData = new FindSortestTargetSum().finsTargetSumArray(arr, 8);
         for (Integer integer : listOfSmallestData) {
             System.out.print(integer + " ");
