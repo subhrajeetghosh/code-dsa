@@ -44,6 +44,24 @@ public class ConstructStringFromWord {
         return false;
     }
 
+    //Another way of Solutioning
+    public boolean checkCanConstruct_3rMethod(String target, String[] wordBank) {
+        if(target.isEmpty()) {
+            return true;
+        }
+        for(String word : wordBank) {
+            if(target.indexOf(word) == 0) {
+                String suffix = target.replace(word, "");
+                if(checkCanConstruct_3rMethod(suffix, wordBank) == true) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //Memorization
+    
     public static void main(String[] args) {
         String[] arr = { "abc", "dasa", "def" };
         System.out.println(new ConstructStringFromWord().canConstruct("abcdef", arr));
