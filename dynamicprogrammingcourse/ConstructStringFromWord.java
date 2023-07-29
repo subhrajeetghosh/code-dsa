@@ -57,7 +57,7 @@ public class ConstructStringFromWord {
         for (String word : wordBank) {
             if (target.indexOf(word) == 0) {
                 String suffix = target.replace(word, "");
-                if (checkCanConstruct_3rdMethod(suffix, wordBank) == true) {
+                if (checkCanConstruct_3rdMethod(suffix, wordBank)) {
                     return true;
                 }
             }
@@ -75,7 +75,7 @@ public class ConstructStringFromWord {
         for (String word : wordBank) {
             if (target.indexOf(word) == 0) {
                 String suffix = target.replace(word, "");
-                if (checkCanConstruct_4thMethod(suffix, wordBank) == true) {
+                if (checkCanConstruct_4thMethod(suffix, wordBank)) {
                     map.put(target, true);
                     return true;
                 }
