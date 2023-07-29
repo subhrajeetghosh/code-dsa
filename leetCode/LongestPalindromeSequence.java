@@ -1,3 +1,4 @@
+package leetCode;
 public class LongestPalindromeSequence {
     int res = 0;
 
