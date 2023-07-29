@@ -1,5 +1,8 @@
 package dynamicprogrammingcourse;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * write a function canConstruct(target, wordbank) that accept target String and
  * an array of String
@@ -11,8 +14,10 @@ package dynamicprogrammingcourse;
  */
 
 public class ConstructStringFromWord {
+    Map<String, Boolean> map = new HashMap<String, Boolean>();
+
     public boolean canConstruct(String target, String[] wordBank) {
-        //return checkCanConstruct(new StringBuilder(), target, wordBank, 0);
+        // return checkCanConstruct(new StringBuilder(), target, wordBank, 0);
         return checkCanConstruct_2ndMethod(target, wordBank, new StringBuilder());
     }
 
@@ -44,15 +49,15 @@ public class ConstructStringFromWord {
         return false;
     }
 
-    //Another way of Solutioning
-    public boolean checkCanConstruct_3rMethod(String target, String[] wordBank) {
-        if(target.isEmpty()) {
+    // Another way of Solutioning
+    public boolean checkCanConstruct_3rdMethod(String target, String[] wordBank) {
+        if (target.isEmpty()) {
             return true;
         }
-        for(String word : wordBank) {
-            if(target.indexOf(word) == 0) {
+        for (String word : wordBank) {
+            if (target.indexOf(word) == 0) {
                 String suffix = target.replace(word, "");
-                if(checkCanConstruct_3rMethod(suffix, wordBank) == true) {
+                if (checkCanConstruct_3rdMethod(suffix, wordBank) == true) {
                     return true;
                 }
             }
@@ -60,10 +65,29 @@ public class ConstructStringFromWord {
         return false;
     }
 
-    //Memorization
-    
+    // Memorization
+    public boolean checkCanConstruct_4thMethod(String target, String[] wordBank) {
+        if (map.containsKey(target))
+            return map.get(target);
+        if (target.isEmpty()) {
+            return true;
+        }
+        for (String word : wordBank) {
+            if (target.indexOf(word) == 0) {
+                String suffix = target.replace(word, "");
+                if (checkCanConstruct_4thMethod(suffix, wordBank) == true) {
+                    map.put(target, true);
+                    return true;
+                }
+            }
+        }
+        map.put(target, false);
+        return false;
+    }
+
     public static void main(String[] args) {
         String[] arr = { "abc", "dasa", "def" };
-        System.out.println(new ConstructStringFromWord().canConstruct("abcdef", arr));
+        System.out.println(new ConstructStringFromWord().canConstruct("abcef", arr));
+        System.out.println(new ConstructStringFromWord().checkCanConstruct_4thMethod("abcef", arr));
     }
 }
