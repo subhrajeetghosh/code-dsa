@@ -1,6 +1,13 @@
+package leetCode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+/*
+ * https://leetcode.com/problems/clone-graph/
+ * 
+ * @author subhrajeetghosh
+ */
 
 class Node {
     public int val;
@@ -42,9 +49,3 @@ public class CloneGraph {
     }
 
 }
-
-
-
-/*
- * https://leetcode.com/problems/clone-graph/description/
- */
