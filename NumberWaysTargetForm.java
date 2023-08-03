@@ -52,7 +52,7 @@ public class NumberWaysTargetForm {
 
     // Memorize approch of the 2nd_Method
     public int countConstruct_3rdMethod(String[] words, String target, int j) {
-        if(target.isEmpty()) {
+        if (target.isEmpty()) {
             return 1;
         }
         String memoKey = j + "_" + target;
