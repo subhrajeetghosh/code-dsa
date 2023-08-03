@@ -1,5 +1,10 @@
 package leetCode;
 
+/**
+ * https://leetcode.com/problems/letter-combinations-of-a-phone-number
+ * 
+ * @author subhrajeetghosh
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +28,7 @@ public class LetterCombination {
         return listOfData;
     }
 
-    //Recursive Approch
+    // Recursive Approch
     public void getAllCombination(String digits, String constuctCombination, int index) {
         if (constuctCombination.length() == digits.length()) {
             listOfData.add(constuctCombination);
