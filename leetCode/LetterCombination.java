@@ -34,9 +34,6 @@ public class LetterCombination {
             listOfData.add(constuctCombination);
             return;
         }
-        if (index >= digits.length()) {
-            return;
-        }
         int currentNum = digits.charAt(index) - 48;
         String currentDigitGrp = numberMap.get(currentNum);
         for (char ch : currentDigitGrp.toCharArray()) {
