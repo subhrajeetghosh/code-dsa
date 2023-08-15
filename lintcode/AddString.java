@@ -1,5 +1,11 @@
 package lintcode;
 
+/**
+ * https://www.lintcode.com/problem/655/
+ * 
+ * @author subhrajeetghosh
+ */
+
 public class AddString {
     public String addStrings(String num1, String num2) {
         int num1Length = num1.length() - 1;
@@ -10,7 +16,7 @@ public class AddString {
             int currentNum = ((num1.charAt(num1Length) - '0') + (num2.charAt(num2Length) - '0')) + keep;
             keep = 0;
             if (currentNum > 9) {
-                keep = currentNum / 10; // just can make keep as 1
+                keep = 1;
             }
             sum.append(currentNum % 10);
             num1Length--;
@@ -31,8 +37,8 @@ public class AddString {
             if (keep > 0) {
                 int currentNum = ((num.charAt(index) - '0') + keep);
                 if (currentNum > 9) {
-                    keep = currentNum / 10;
-                    currentNum %= 10; // just can make keep as 1
+                    keep = 1;
+                    currentNum %= 10;
                 } else {
                     keep = 0;
                 }
