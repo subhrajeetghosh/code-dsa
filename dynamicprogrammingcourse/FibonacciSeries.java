@@ -1,4 +1,5 @@
 package dynamicprogrammingcourse;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,12 +25,26 @@ public class FibonacciSeries {
         return map.get(n);
     }
 
-    //Dp
-
+    // dp
+    public int FibonacciSeriesDP(int n) {
+        if (n == 0 || n==1)
+            return n;
+        int first = 0;
+        int second = 1;
+        int currentNum = 0;
+        for(int i=2; i<=n; i++) {
+            currentNum = first + second;
+            first = second;
+            second = currentNum;
+        }
+        return currentNum;
+    }
 
     public static void main(String[] args) {
         FibonacciSeries obj = new FibonacciSeries();
         System.out.println(obj.fibonacciMemorization(9));
+        System.out.println(obj.FibonacciSeriesDP(9));
+
     }
 }
 
