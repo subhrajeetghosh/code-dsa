@@ -1,5 +1,15 @@
 package dynamicprogrammingcourse;
 
+/**
+ * We're going to have a 2D grid and we start in the top left corner,
+ * and our goal is to go to the bottom right corner. We only have two possible
+ * moves at any point in time, that is to move down or to the right. In how many
+ * ways can we actually travel to the goal if we had a grid of dimensions m by
+ * n?
+ * 
+ * @author subhrajeetghosh
+ */
+
 public class UniqueGridPath {
     public int gridTraveler(int m, int n) {
         int[][] grid = new int[m][n];
@@ -16,6 +26,7 @@ public class UniqueGridPath {
         }
         return grid[m - 1][n - 1];
     }
+
     public static void main(String[] args) {
         System.out.println(new UniqueGridPath().gridTraveler(3, 3));
     }

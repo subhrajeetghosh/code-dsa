@@ -3,6 +3,12 @@ package dynamicprogrammingcourse;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * fibonacci Series
+ * 
+ * @author subhrajeetghosh
+ */
+
 public class FibonacciSeries {
     Map<Integer, Integer> map = new HashMap<>();
 
@@ -27,12 +33,12 @@ public class FibonacciSeries {
 
     // dp
     public int FibonacciSeriesDP(int n) {
-        if (n == 0 || n==1)
+        if (n == 0 || n == 1)
             return n;
         int first = 0;
         int second = 1;
         int currentNum = 0;
-        for(int i=2; i<=n; i++) {
+        for (int i = 2; i <= n; i++) {
             currentNum = first + second;
             first = second;
             second = currentNum;
