@@ -37,8 +37,25 @@ public class FindTargetCanSum {
         return map.get(target);
     }
 
+    // dynamic problem tabulation
+    public boolean findTargetSum_Tabulation(int[] arr, int targetSum) {
+        boolean[] targetSumArr = new boolean[targetSum + 1];
+        targetSumArr[0] = true;
+        for (int i = 0; i < targetSumArr.length; i++) {
+            if (targetSumArr[i]) {
+                for (int j = 0; j < arr.length; j++) {
+                    if (i + arr[j] < targetSumArr.length) {
+                        targetSumArr[i + arr[j]] = true;
+                    }
+                }
+            }
+        }
+        return targetSumArr[targetSum];
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 5, 3, 4, 7 };
+        int[] arr = { 5, 3 };
         System.out.println(new FindTargetCanSum().findTargetSumIfPossible(arr, 7));
+        System.out.println(new FindTargetCanSum().findTargetSum_Tabulation(arr, 7));
     }
 }
