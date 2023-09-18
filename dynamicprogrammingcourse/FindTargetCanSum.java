@@ -37,7 +37,7 @@ public class FindTargetCanSum {
         return map.get(target);
     }
 
-    // dynamic problem tabulation
+    // dynamic approch tabulation
     public boolean findTargetSum_Tabulation(int[] arr, int targetSum) {
         boolean[] targetSumArr = new boolean[targetSum + 1];
         targetSumArr[0] = true;

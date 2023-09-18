@@ -47,13 +47,34 @@ public class FindTargetHowSum {
         return map.get(target);
     }
 
-    // Different Implementation
+    // Dynamic Implementation Using Tabulation
+    public List<Integer> findTargetHowSumArray_Tabulation(int target, int[] arr) {
+        @SuppressWarnings("unchecked")
+        ArrayList<Integer>[] targetList = new ArrayList[target + 1];
+        targetList[0] = new ArrayList<>();
+        for (int i = 0; i <= target; i++) {
+            if (targetList[i] != null) {
+                for (int j = 0; j < arr.length; j++) {
+                    if (i + arr[j] <= target) {
+                        targetList[i + arr[j]] = new ArrayList<>(targetList[i]);
+                        targetList[i + arr[j]].add(arr[j]);
+                    }
+                }
+            }
+        }
+        return targetList[target];
+    }
 
     public static void main(String[] args) {
         int[] arr = { 7, 3, 5 };
-        List<Integer> lst = new FindTargetHowSum().findTargetHowSumArray(8, arr);
+        List<Integer> lst = new FindTargetHowSum().findTargetHowSumArray(15, arr);
+        List<Integer> lst1 = new FindTargetHowSum().findTargetHowSumArray_Tabulation(15, arr);
         for (int i : lst) {
-            System.out.println(i);
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i : lst1) {
+            System.out.print(i + " ");
         }
     }
 }
