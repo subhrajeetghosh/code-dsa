@@ -61,6 +61,8 @@ public class FindTargetHowSum {
                     }
                 }
             }
+            if (targetList[target] != null)
+                break;
         }
         return targetList[target];
     }
