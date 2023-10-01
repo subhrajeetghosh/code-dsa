@@ -85,9 +85,26 @@ public class ConstructStringFromWord {
         return false;
     }
 
+    // Dynamic Programming
+    public boolean checkCanConstruct_5thMethod(String target, String[] wordBank) { // time complexity = O(m^2n) and
+                                                                                   // space = O(m)
+        boolean[] matcher = new boolean[target.length() + 1];
+        matcher[0] = true;
+        for (int i = 0; i < target.length(); i++) {
+            if (matcher[i]) {
+                for (String word : wordBank) {
+                    if (i + word.length() <= target.length() && target.substring(i, i + word.length()).equals(word)) {
+                        matcher[i + word.length()] = true;
+                    }
+                }
+            }
+        }
+        return matcher[target.length()];
+    }
+
     public static void main(String[] args) {
         String[] arr = { "abc", "dasa", "def" };
-        System.out.println(new ConstructStringFromWord().canConstruct("abcef", arr));
-        System.out.println(new ConstructStringFromWord().checkCanConstruct_4thMethod("abcef", arr));
+        System.out.println(new ConstructStringFromWord().canConstruct("abcdef", arr));
+        System.out.println(new ConstructStringFromWord().checkCanConstruct_5thMethod("abcdef", arr));
     }
 }
