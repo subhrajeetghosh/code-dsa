@@ -41,10 +41,11 @@ public class ConstructStrArrayFromWord {
         }
     }
 
-    //Memorization
+    // Memorization
     Map<String, List<List<String>>> map = new HashMap<>();
+
     public List<List<String>> constructString_2ndMethod(String target, String[] wordBank) {
-        if(map.containsKey(target)) {
+        if (map.containsKey(target)) {
             return map.get(target);
         }
         if (target.isEmpty()) {
@@ -69,10 +70,34 @@ public class ConstructStrArrayFromWord {
         return result;
     }
 
-
+    // Dynamic Programming
+    public List<List<String>> constructString_3rdMethod(String target, String[] wordBank) {
+        @SuppressWarnings("unchecked")
+        List<List<String>>[] constructWord = new List[target.length() + 1];
+        constructWord[0] = new ArrayList<>();
+        constructWord[0].add(new ArrayList<>());
+        for (int i = 0; i < target.length(); i++) {
+            if (constructWord[i] != null) {
+                for (String word : wordBank) {
+                    if (i + word.length() <= target.length() && target.substring(i, i + word.length()).equals(word)) {
+                        List<List<String>> currentListString = constructWord[i];
+                        if (constructWord[i + word.length()] == null) {
+                            constructWord[i + word.length()] = new ArrayList<>();
+                        }
+                        for (List<String> list : currentListString) {
+                            List<String> newList = new ArrayList<>(list);
+                            newList.add(word);
+                            constructWord[i + word.length()].add(newList);
+                        }
+                    }
+                }
+            }
+        }
+        return constructWord[target.length()];
+    }
 
     public static void main(String[] args) {
-        List<List<String>> stringArrays = new ConstructStrArrayFromWord().constructString_2ndMethod(
+        List<List<String>> stringArrays = new ConstructStrArrayFromWord().constructString_3rdMethod(
                 "abcdef", new String[] { "ab", "abc", "def", "cd", "abcd", "ef", "c" });
         for (List<String> list : stringArrays) {
             for (String str : list) {
