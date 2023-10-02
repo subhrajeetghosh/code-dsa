@@ -63,8 +63,25 @@ public class CountConstructString {
         return false;
     }
 
+    // Dynamic Programming
+    public int countConstruct_3rdMethod(String target, String[] wordBank) {
+        int[] constructCount = new int[target.length() + 1];
+        constructCount[0] = 1;
+        for (int i = 0; i < target.length(); i++) {
+            if (constructCount[i] > 0) {
+                for (String word : wordBank) {
+                    if (i + word.length() <= target.length() && target.substring(i, i + word.length()).equals(word)) {
+                        constructCount[i + word.length()] += constructCount[i];
+                    }
+                }
+            }
+        }
+        return constructCount[target.length()];
+    }
+
     public static void main(String[] args) {
-        String[] arr = { "abc", "dasa", "def", "ab", "c", "d", "ef", "e", "f"};
+        String[] arr = { "abc", "dasa", "def", "ab", "c", "d", "ef", "e", "f" };
         System.out.println(new CountConstructString().countConstruct("abcdef", arr));
+        System.out.println(new CountConstructString().countConstruct_3rdMethod("abcdef", arr));
     }
 }
