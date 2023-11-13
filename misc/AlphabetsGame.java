@@ -19,13 +19,13 @@ public class AlphabetsGame {
         }
         if (kevin > stuart) {
             System.out.println("Kevin " + kevin);
-        } 
-        else if(stuart > kevin) {
+        } else if (stuart > kevin) {
             System.out.println("Stuart " + stuart);
         } else {
             System.out.println("Draw");
         }
     }
+
     public static void main(String[] args) {
         new AlphabetsGame().alphabatesGame("BANANA");
     }
