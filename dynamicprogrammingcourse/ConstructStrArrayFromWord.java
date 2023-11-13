@@ -71,7 +71,9 @@ public class ConstructStrArrayFromWord {
     }
 
     // Dynamic Programming
-    public List<List<String>> constructString_3rdMethod(String target, String[] wordBank) {
+    public List<List<String>> constructString_3rdMethod(String target, String[] wordBank) { // time complexity = O(n^m)
+                                                                                            // and space complexity =
+                                                                                            // O(n^m)
         @SuppressWarnings("unchecked")
         List<List<String>>[] constructWord = new List[target.length() + 1];
         constructWord[0] = new ArrayList<>();
