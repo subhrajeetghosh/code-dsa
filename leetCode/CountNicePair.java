@@ -35,7 +35,7 @@ public class CountNicePair {
         Map<Integer, Integer> freqMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             revVal[i] = getRevVal(nums[i]);
-            int difference = nums[i] - revVal[i];
+            int difference = nums[i] - revVal[i];  // AS -> nums[i] - revVal[i] == nums[j] + revVal[j]
             count += freqMap.getOrDefault(difference, 0);
             count %= 1_000_000_007;
             freqMap.put(difference, freqMap.getOrDefault(difference, 0) + 1);
