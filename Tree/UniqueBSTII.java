@@ -1,4 +1,4 @@
-package leetCode;
+package Tree;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +44,7 @@ public class UniqueBSTII {
 
     /*
      * dynamic programming approch
-     * time complexity - O(n)
+     * time complexity - O(4^n/√n)
      */
 
     Map<String, List<TreeNode>> map = new HashMap<>();
