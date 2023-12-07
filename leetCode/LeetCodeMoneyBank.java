@@ -28,7 +28,7 @@ public class LeetCodeMoneyBank {
         return sum;
     }
 
-    public int totalMoney_2ndMethod(int n) {
+    public int totalMoney_2ndMethod(int n) {  // time complexity - O(1)
         int noOfWeeks = n / 7;
         int totalMoneyForWeeks = (noOfWeeks * (28 + (28 + (noOfWeeks - 1) * 7))) / 2;
         int monday = noOfWeeks + 1;
