@@ -2,6 +2,11 @@ package tree;
 
 import commonfile.TreeNode;
 
+/**
+ * https://leetcode.com/problems/construct-string-from-binary-tree/
+ * 
+ * @author Subhrajeet Ghosh
+ */
 public class PreOrderString {
     public String tree2str(TreeNode root) {
         if (root == null)
