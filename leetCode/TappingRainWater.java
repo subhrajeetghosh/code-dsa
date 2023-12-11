@@ -6,7 +6,7 @@ package leetCode;
  * @author Subhrajeet Ghosh
  */
 public class TappingRainWater {
-    public int trap(int[] height) {
+    public int trap(int[] height) {  //time complexity - O(n+n)
         int[] leftMax = new int[height.length];
         int[] rightMax = new int[height.length];
         int leftMaxPointer = 0;
