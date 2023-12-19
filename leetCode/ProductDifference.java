@@ -17,7 +17,7 @@ public class ProductDifference {
     public int maxProductDifference_2ndMethod(int[] nums) { // time complexity - O(n)
         int min1 = Integer.MAX_VALUE;
         int min2 = Integer.MAX_VALUE;
-        int max1 = Integer.MIN_VALUE;
+        int max1 = 0;
         int max2 = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] <= min2) {
