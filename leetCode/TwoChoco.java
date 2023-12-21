@@ -20,7 +20,6 @@ public class TwoChoco {
                 nextLowest = prices[i];
             }
         }
-        System.out.println(lowest + " " + nextLowest);
         int res = money - lowest - nextLowest;
         return res >= 0 ? res : money;
     }
