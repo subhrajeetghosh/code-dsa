@@ -15,4 +15,18 @@ public class LargestSameDigit {
         }
         return result != -1 ? result + "" + result + "" + result : "";
     }
+
+    public String largestGoodInteger_2ndMethod(String num) {
+        int currentNum = -1;
+        String currentString = "";
+        for (int i = 0; i < num.length() - 2; i++) {
+            if (num.charAt(i) == num.charAt(i + 1) && num.charAt(i) == num.charAt(i + 2)) {
+                if (currentNum < num.charAt(i) - '0') {
+                    currentNum = num.charAt(i) - '0';
+                    currentString = num.substring(i, i + 3);
+                }
+            }
+        }
+        return currentString;
+    }
 }
