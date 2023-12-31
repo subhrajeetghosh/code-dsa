@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/minimum-time-visiting-all-points
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class MiniTimeVistPoint {
     public int minTimeToVisitAllPoints(int[][] points) {

@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * https://leetcode.com/problems/destination-city/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class DestinationCity {
     // initial approch

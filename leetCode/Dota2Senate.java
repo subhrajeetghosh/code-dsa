@@ -5,7 +5,7 @@ import java.util.Queue;
 /**
  * {@link} https://leetcode.com/problems/dota2-senate
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class Dota2Senate {

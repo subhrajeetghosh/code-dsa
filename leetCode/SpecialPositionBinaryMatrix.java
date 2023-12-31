@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/special-positions-in-a-binary-matrix
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class SpecialPositionBinaryMatrix {

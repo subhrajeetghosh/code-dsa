@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/trapping-rain-water/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class TappingRainWater {
     public int trap(int[] height) {  //time complexity - O(n+n)

@@ -13,7 +13,7 @@ import java.util.Map;
  * can be constructing by concatnating the elements from wordBank
  * you may reuse element of "wordBank" as many time as needed
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class ConstructStrArrayFromWord {

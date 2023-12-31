@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * https://leetcode.com/problems/maximum-product-difference-between-two-pairs
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class ProductDifference {

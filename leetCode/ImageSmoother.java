@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/image-smoother
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class ImageSmoother {
     //BruteForce Approch

@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * https://leetcode.com/problems/number-of-dice-rolls-with-target-sum
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class DiceTargetSum {
     int res = 0;

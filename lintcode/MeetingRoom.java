@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * https://www.lintcode.com/problem/920/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class MeetingRoom {
     // time complexity - O(n*m) as n -> list count, m -> time point

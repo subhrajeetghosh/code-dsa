@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * test list fetures in java
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class CheckListPresentInList {
     public static void main(String[] args) {

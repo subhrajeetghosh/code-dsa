@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * @link - https://leetcode.com/problems/subsets
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class SubSetArray {

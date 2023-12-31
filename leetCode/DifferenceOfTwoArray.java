@@ -2,7 +2,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/find-the-difference-of-two-arrays/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 import java.util.ArrayList;

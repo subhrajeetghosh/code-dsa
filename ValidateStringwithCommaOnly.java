@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
  * Helper class to verify and fetch a certain type of string which will have
  * only number seperated by comma condition on it
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class ValidateStringwithCommaOnly {
     public static boolean isValid(String str) {

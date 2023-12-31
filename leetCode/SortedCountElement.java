@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class SortedCountElement {
     public int findSpecialInteger(int[] arr) { // time complexity - O(n)

@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/maximum-score-after-splitting-a-string
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class SpittingString {
     // Brute force Approch

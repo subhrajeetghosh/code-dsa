@@ -5,7 +5,7 @@ import commonfile.TreeNode;
 /**
  * https://leetcode.com/problems/construct-string-from-binary-tree/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class PreOrderString {
     public String tree2str(TreeNode root) {

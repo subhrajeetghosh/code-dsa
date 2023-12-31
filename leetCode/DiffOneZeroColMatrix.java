@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/difference-between-ones-and-zeros-in-row-and-column/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class DiffOneZeroColMatrix {
     public int[][] onesMinusZeros(int[][] grid) { // time complexity - O(mn) space - O(m+n)

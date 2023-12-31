@@ -3,7 +3,7 @@
  * lst from i to j.
  * {@link https://www.dailycodingproblem.com}
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class RerverseAnArray {
     public int[] reverse(int[] arr, int i, int j) {

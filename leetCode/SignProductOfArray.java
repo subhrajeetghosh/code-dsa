@@ -2,7 +2,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/sign-of-the-product-of-an-array
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class SignProductOfArray {
     // this way it will take maximum time and space

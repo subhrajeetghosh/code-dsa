@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class MaxWidthVerticleArea {
 

@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * https://leetcode.com/problems/path-crossing/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class PathCrossing {
     public boolean isPathCrossing(String path) {  //time complexity - O(n)

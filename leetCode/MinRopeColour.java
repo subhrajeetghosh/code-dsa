@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/minimum-time-to-make-rope-colorful
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class MinRopeColour {

@@ -7,7 +7,7 @@ import java.util.TreeSet;
 /**
  * https://leetcode.com/problems/design-a-food-rating-system
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 class FoodRatings {

@@ -13,7 +13,7 @@ import java.util.Map;
  * you may reuse element of "wordBank" as many time as needed
  * 
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class CountConstructString {

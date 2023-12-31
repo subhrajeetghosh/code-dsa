@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/minimum-changes-to-make-alternating-binary-string/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class MinChangeBineryStr {
 

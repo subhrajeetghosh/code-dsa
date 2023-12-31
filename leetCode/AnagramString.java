@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/valid-anagram
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class AnagramString {
     public boolean isAnagram(String s, String t) { // time complexity - O(n), n -> length os any string

@@ -9,7 +9,7 @@ package dynamicprogrammingcourse;
  * you may use an element from the array multiple times
  * you may assume all intgers number are non negative
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class FindTargetBestSum {

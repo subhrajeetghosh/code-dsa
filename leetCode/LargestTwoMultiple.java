@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class LargestTwoMultiple {
     public int maxProduct(int[] nums) { // time complexity - O(n)

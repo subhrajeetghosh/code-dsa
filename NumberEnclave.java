@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/number-of-enclaves/description/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class NumberEnclave {
     public int numEnclaves(int[][] grid) {

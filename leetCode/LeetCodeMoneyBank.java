@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/calculate-money-in-leetcode-bank
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class LeetCodeMoneyBank {
     public int totalMoney(int n) { // time complexity : O(n)

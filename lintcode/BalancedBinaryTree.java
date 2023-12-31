@@ -10,7 +10,7 @@ import commonfile.TreeNode;
  * a height-balanced binary tree is defined as a binary tree in which
  * the depth of the two subtrees of every node never differ by more than 1.
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class BalancedBinaryTree {
     Map<TreeNode, Integer> map = new HashMap<>();

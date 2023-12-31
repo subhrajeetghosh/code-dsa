@@ -3,7 +3,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/transpose-matrix
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class TransposeMatrix {
     public int[][] transpose(int[][] matrix) {

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * find the different usage of {@link List} stream method
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class ListStreamUsage {

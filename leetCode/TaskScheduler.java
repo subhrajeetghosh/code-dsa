@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * https://leetcode.com/problems/task-scheduler/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 
 public class TaskScheduler {

@@ -2,7 +2,7 @@ package leetCode;
 /**
  * https://leetcode.com/problems/add-digits/
  * 
- * @author Subhrajeet Ghosh
+ * @author subhrajeetghosh
  */
 public class AddDigit {
     public int addDigits(int num) {
