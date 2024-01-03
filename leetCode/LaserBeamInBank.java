@@ -33,4 +33,22 @@ public class LaserBeamInBank {
         }
         return result;
     }
+
+    public int numberOfBeams_2ndMethod(String[] bank) { // different approch
+        int total = 0;
+        int prev = 0;
+        for (String str : bank) {
+            int level = 0;
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) == '1') {
+                    total += prev;
+                    level++;
+                }
+            }
+            if (level > 0) {
+                prev = level;
+            }
+        }
+        return total;
+    }
 }
