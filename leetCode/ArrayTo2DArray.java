@@ -35,7 +35,7 @@ public class ArrayTo2DArray {
     }
 
     //optmized approch
-    public List<List<Integer>> findMatrix_2ndMethod(int[] nums) {  // time complexity - O(n)
+    public List<List<Integer>> findMatrix_2ndMethod(int[] nums) { // time complexity - O(n)
         int[] countArr = new int[nums.length + 1];
         List<List<Integer>> resultList = new ArrayList<>();
         for (int num : nums) {
