@@ -30,6 +30,23 @@ public class MinOptArrayEmpty {
         }
         return result;
     }
+
+    public int minOperations_2ndMethod(int[] nums) {
+        Map<Integer, Integer> numsCount = new HashMap<Integer, Integer>();
+        for (int num : nums) {
+            numsCount.put(num, numsCount.getOrDefault(num, 0) + 1);
+        }
+        int result = 0;
+        for (int key : numsCount.keySet()) {
+            int currentCount = numsCount.get(key);
+            if (currentCount == 1)
+                return -1;
+            result += currentCount / 3;
+            if (currentCount % 3 != 0)
+                result++;
+        }
+        return result;
+    }
 }
 
 /*
