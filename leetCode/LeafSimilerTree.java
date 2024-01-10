@@ -20,11 +20,7 @@ public class LeafSimilerTree {
         dfs(root2, list2);
         if (list1.size() != list2.size())
             return false;
-        for (int i = 0; i < list1.size(); i++) {
-            if (list1.get(i) != list2.get(i))
-                return false;
-        }
-        return true;
+        return list1.equals(list2);
     }
 
     public void dfs(TreeNode root, List<Integer> list) {
