@@ -19,6 +19,7 @@ import commonfile.TreeNode;
 public class InfectTreeNode {
     Map<Integer, List<Integer>> graph;
 
+    //BFS approch
     public int amountOfTime(TreeNode root, int start) {
         graph = new HashMap<>();
         Queue<Integer> queue = new LinkedList<Integer>();
@@ -45,24 +46,18 @@ public class InfectTreeNode {
     private void buildGraph(TreeNode root) {
         if (root == null)
             return;
-        checkGraph(root);
+        graph.putIfAbsent(root.val, new ArrayList<>());
         if (root.left != null) {
-            checkGraph(root.left);
+            graph.putIfAbsent(root.left.val, new ArrayList<>());
             graph.get(root.left.val).add(root.val);
             graph.get(root.val).add(root.left.val);
         }
         if (root.right != null) {
-            checkGraph(root.right);
+            graph.putIfAbsent(root.right.val, new ArrayList<>());
             graph.get(root.right.val).add(root.val);
             graph.get(root.val).add(root.right.val);
         }
         buildGraph(root.left);
         buildGraph(root.right);
-    }
-
-    private void checkGraph(TreeNode node) {
-        if (!graph.containsKey(node.val)) {
-            graph.put(node.val, new ArrayList<>());
-        }
     }
 }
