@@ -12,7 +12,7 @@ public class ClimbStairs {
     Map<Integer, Integer> map = new HashMap<>();
 
     // memorized approch with recursion
-    public int climbStairs(int n) {
+    public int climbStairs(int n) { // time complexity - O(n)
         map.put(1, 1);
         map.put(2, 2);
         return rec(n);
@@ -26,7 +26,7 @@ public class ClimbStairs {
     }
 
     // dp approch
-    public int climbStairs_2ndMethod(int n) {
+    public int climbStairs_2ndMethod(int n) { // time complexity - O(n)
         if (n < 2)
             return 1;
         int[] arr = new int[n + 1];
