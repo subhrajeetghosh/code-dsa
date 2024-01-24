@@ -1,15 +1,34 @@
-class RishiClass {
-    public int fibo_12(int n) {
-        if (n == 1) {
-            return 0;
+public class TestClass {
+    public void resultMethod() {
+        int[] arr = new int[1];
+        test(3, arr);
+        System.out.println(arr[0]);
+    }
+
+    private void test(int n, int[] arr) {
+        arr[0]++;
+        if(n < 1) {
+            return;
         }
-        if (n == 2) {
-            return 1;
+        test(n-1, arr);
+    }
+
+    public void resultMethod1() {
+        int num = 0;
+        test1(3, num);
+        System.out.println(num);
+    }
+
+    private void test1(int n, int num) {
+        num++;
+        if(n < 1) {
+            return;
         }
-        return fibo_12(n - 2) + fibo_12(n - 1);
+        test1(n-1, num);
     }
 
     public static void main(String args[]) throws Exception {
-        System.out.println(new RishiClass().fibo_12(25));
+        new TestClass().resultMethod();
+        new TestClass().resultMethod1();
     }
 }
