@@ -9,6 +9,7 @@ import java.util.List;
  * @author subhrajeetghosh
  */
 public class MaxLenConcatString {
+    //recursive approch
     public int maxLength(List<String> arr) { // time copmlexity - O(2^n)
         return checkLength(arr, 0, 0, new int[26]);
     }
