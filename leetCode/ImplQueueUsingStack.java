@@ -11,7 +11,7 @@ public class ImplQueueUsingStack {
     Stack<Integer> stack1;
     Stack<Integer> stack2;
 
-    public ImplQueueUsingStack() {
+    public ImplQueueUsingStack() {  //time complexity - O(n)
         stack1 = new Stack<Integer>();
         stack2 = new Stack<Integer>();
     }
