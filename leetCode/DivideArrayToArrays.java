@@ -3,6 +3,8 @@ package leetCode;
 import java.util.Arrays;
 
 /**
+ * https://leetcode.com/problems/divide-array-into-arrays-with-max-difference
+ * 
  * @author subhrajeetghosh
  */
 public class DivideArrayToArrays {
