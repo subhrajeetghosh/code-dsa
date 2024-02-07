@@ -1,34 +1,16 @@
+import java.util.Map;
+import java.util.TreeMap;
+
 public class TestClass {
-    public void resultMethod() {
-        int[] arr = new int[1];
-        test(3, arr);
-        System.out.println(arr[0]);
-    }
 
-    private void test(int n, int[] arr) {
-        arr[0]++;
-        if(n < 1) {
-            return;
-        }
-        test(n-1, arr);
-    }
-
-    public void resultMethod1() {
-        int num = 0;
-        test1(3, num);
-        System.out.println(num);
-    }
-
-    private void test1(int n, int num) {
-        num++;
-        if(n < 1) {
-            return;
-        }
-        test1(n-1, num);
+    public void testTreeMap() {
+        Map<Integer, StringBuilder> map = new TreeMap<>();
+        map.computeIfAbsent(5, k -> new StringBuilder()).append(String.valueOf(9).repeat(8));
+        map.computeIfAbsent(5, k -> new StringBuilder()).append(String.valueOf(10).repeat(8));
+        System.out.println(map.get(5));
     }
 
     public static void main(String args[]) throws Exception {
-        new TestClass().resultMethod();
-        new TestClass().resultMethod1();
+        new TestClass().testTreeMap();
     }
 }
