@@ -1,5 +1,10 @@
 package leetCode;
 
+/**
+ * https://leetcode.com/problems/word-search
+ * 
+ * @author subhrajeetghosh
+ */
 public class WordSearch {
 
     public boolean exist(char[][] board, String word) {
