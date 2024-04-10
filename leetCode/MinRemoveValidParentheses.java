@@ -1,7 +1,5 @@
 package leetCode;
 
-import java.util.Stack;
-
 /**
  * https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses
  * 
