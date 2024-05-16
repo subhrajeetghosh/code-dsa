@@ -1,16 +1,24 @@
-import java.util.Map;
-import java.util.TreeMap;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class TestClass {
 
-    public void testTreeMap() {
-        Map<Integer, StringBuilder> map = new TreeMap<>();
-        map.computeIfAbsent(5, k -> new StringBuilder()).append(String.valueOf(9).repeat(8));
-        map.computeIfAbsent(5, k -> new StringBuilder()).append(String.valueOf(10).repeat(8));
-        System.out.println(map.get(5));
-    }
+    public static void main(String[] args) throws InterruptedException {
+        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
-    public static void main(String args[]) throws Exception {
-        new TestClass().testTreeMap();
+        // Simulate some work before scheduling the download completion message
+        System.out.println("Starting download process...");
+        Thread.sleep(3000); // Simulate 3 second of download work
+
+        // Schedule the download completion message with a 2-second delay
+        executor.schedule(() -> System.out.println("Download complete!"), 2, TimeUnit.SECONDS);
+
+        // Simulate some additional work after scheduling
+        System.out.println("Performing other tasks while download continues...");
+
+        // Shutdown the executor service (optional)
+        executor.shutdown();
     }
 }
