@@ -3,12 +3,13 @@ package leetCode;
 import java.util.PriorityQueue;
 
 /**
+ * https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit
  * 
  * @author subhrajeetghosh
  */
 
 public class LongestSubArrayAbsDiff {
-    // Bruteforce apprich
+    // Bruteforce approch
     public int longestSubarray_2ndMethod(int[] nums, int limit) { // time complexity - O(n^2)
         int result = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -40,7 +41,7 @@ public class LongestSubArrayAbsDiff {
             maxHeap.add(new int[] { nums[right], right });
             minHeap.add(new int[] { nums[right], right });
 
-            if (maxHeap.peek()[0] - minHeap.peek()[0] > limit) {
+            while (maxHeap.peek()[0] - minHeap.peek()[0] > limit) {
                 left = Math.min(maxHeap.peek()[1], minHeap.peek()[1]) + 1;
 
                 while (maxHeap.peek()[1] < left) {
