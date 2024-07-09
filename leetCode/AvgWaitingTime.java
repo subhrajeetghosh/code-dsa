@@ -11,8 +11,7 @@ public class AvgWaitingTime {
         int currentTime = 0;
         for (int[] customer : customers) {
             currentTime = Math.max(customer[0], currentTime) + customer[1];
-            int currentDiff = currentTime - customer[0];
-            totalTime += (double) currentDiff;
+            totalTime += (double) currentTime - customer[0];
         }
 
         return totalTime / customers.length;
