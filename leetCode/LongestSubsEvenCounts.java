@@ -46,8 +46,4 @@ public class LongestSubsEvenCounts {
         }
         return sb.toString();
     }
-
-    public static void main(String[] args) {
-        new LongestSubsEvenCounts().findTheLongestSubstring("bc");
-    }
 }
