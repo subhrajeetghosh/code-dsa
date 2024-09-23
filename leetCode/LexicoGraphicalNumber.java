@@ -17,7 +17,7 @@ public class LexicoGraphicalNumber {
         for (int i = 1; i <= 9; i++) {
             dfs(i);
         }
-        return new ArrayList<>(result);
+        return result;
     }
 
     private void dfs(int number) {
@@ -28,9 +28,5 @@ public class LexicoGraphicalNumber {
         for (int i = 0; i <= 9; i++) {
             dfs(number * 10 + i);
         }
-    }
-
-    public static void main(String[] args) {
-        new LexicoGraphicalNumber().lexicalOrder(24);
     }
 }
