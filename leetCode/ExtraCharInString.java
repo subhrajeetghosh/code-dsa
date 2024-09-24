@@ -13,7 +13,7 @@ public class ExtraCharInString {
     HashSet<String> dict;
     int[] memo;
 
-    public int minExtraChar(String s, String[] dictionary) { //time complexity - O(n^2)
+    public int minExtraChar(String s, String[] dictionary) { // time complexity - O(n^2)
         dict = new HashSet<>(Arrays.asList(dictionary));
         memo = new int[s.length()];
         Arrays.fill(memo, -1);
