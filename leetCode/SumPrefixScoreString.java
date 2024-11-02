@@ -32,12 +32,12 @@ public class SumPrefixScoreString {
     }
 
     public int[] sumPrefixScores(String[] words) { // time complexity = O(n * l)
-        Trie root = new Trie();
+        TrieLocal root = new TrieLocal();
         for (String word : words) {
-            Trie node = root;
+            TrieLocal node = root;
             for (char c : word.toCharArray()) {
                 if (!node.childNode.containsKey(c)) {
-                    node.childNode.put(c, new Trie());
+                    node.childNode.put(c, new TrieLocal());
                 }
                 node = node.childNode.get(c);
                 node.count++;
@@ -47,7 +47,7 @@ public class SumPrefixScoreString {
         int index = 0;
         for (String word : words) {
             int sum = 0;
-            Trie node = root;
+            TrieLocal node = root;
             for (char c : word.toCharArray()) {
                 node = node.childNode.get(c);
                 sum += node.count;
@@ -61,7 +61,7 @@ public class SumPrefixScoreString {
 /**
  * InnerSumPrefixScoreString
  */
-class Trie {
-    Map<Character, Trie> childNode = new HashMap<>();
+class TrieLocal {
+    Map<Character, TrieLocal> childNode = new HashMap<>();
     int count;
 }
