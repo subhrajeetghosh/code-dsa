@@ -1,6 +1,13 @@
 package leetCode;
+
+/**
+ * sub array problem
+ * https://leetcode.com/problems/minimum-size-subarray-sum/description/
+ * 
+ * @author subhrajeetghosh
+ */
 public class MinSubArray {
-    public int minSubArrayLen(int target, int[] nums) {
+    public int minSubArrayLen(int target, int[] nums) { // time complexity - O(n)
         int left = 0;
         int right = 0;
         int sum = 0;
@@ -24,8 +31,3 @@ public class MinSubArray {
         obj.minSubArrayLen(7, arr);
     }
 }
-
-/*
- * sub array problem
- * https://leetcode.com/problems/minimum-size-subarray-sum/description/
- */
