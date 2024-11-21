@@ -3,6 +3,11 @@ package leetCode;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * https://leetcode.com/problems/take-k-of-each-character-from-left-and-right
+ * 
+ * @author subhrajeetghosh
+ */
 public class TakeKOutLeftRight {
     public int takeCharacters(String s, int k) { // time complexity - O(n)
         if (k == 0)
@@ -30,7 +35,4 @@ public class TakeKOutLeftRight {
         return s.length() - maxLeftOut;
     }
 
-    public static void main(String[] args) {
-        new TakeKOutLeftRight().takeCharacters("aabaaaacaabc", 2);
-    }
 }

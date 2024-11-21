@@ -3,6 +3,11 @@ package leetCode;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/
+ * 
+ * @author subhrajeetghosh
+ */
 public class MaxSumDistictSubArray {
     // little fast approch
     public long maximumSubarraySum_2ndMethod(int[] nums, int k) { // time complexity - O(n)
