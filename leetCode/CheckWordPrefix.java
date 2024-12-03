@@ -6,7 +6,7 @@ package leetCode;
  * @author subhrajeetghosh
  */
 public class CheckWordPrefix {
-    public int isPrefixOfWord(String sentence, String searchWord) {
+    public int isPrefixOfWord(String sentence, String searchWord) { // time complexity - O(n)
         int index = 1;
         for (String str : sentence.split(" ")) {
             if (str.indexOf(searchWord) == 0) {
