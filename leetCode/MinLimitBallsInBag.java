@@ -45,9 +45,4 @@ public class MinLimitBallsInBag {
         }
         return true;
     }
-
-    public static void main(String[] args) {
-        int[] arr = { 2, 4, 8, 2 };
-        new MinLimitBallsInBag().minimumSize_2ndMethod(arr, 4);
-    }
 }
