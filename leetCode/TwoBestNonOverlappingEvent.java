@@ -26,7 +26,7 @@ public class TwoBestNonOverlappingEvent {
         return maxResult;
     }
 
-    public int maxTwoEvents_2ndMethod(int[][] events) { //time complexity - O(n log n)
+    public int maxTwoEvents_2ndMethod(int[][] events) { // time complexity - O(n log n)
         Arrays.sort(events, (a, b) -> a[0] - b[0]);
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);
         int currentMax = 0, result = 0;
