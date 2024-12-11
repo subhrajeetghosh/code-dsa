@@ -9,7 +9,7 @@ import java.util.Map;
  * @author subhrajeetghosh
  */
 public class LongestSplSubString {
-    public int maximumLength(String s) {
+    public int maximumLength(String s) { // time complexity - O(n^3)
         if (s.length() == 0)
             return -1;
         for (int i = s.length(); i > 0; i--) {
