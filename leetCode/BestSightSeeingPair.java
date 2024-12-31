@@ -26,7 +26,6 @@ public class BestSightSeeingPair {
             maxI = Math.max(maxI, values[i] + i);
             iArr[i] = maxI;
             maxJ = Math.max(maxJ, values[values.length - i - 1] - (values.length - i - 1));
-            System.out.println(maxJ);
             jArr[values.length - i - 1] = maxJ;
         }
         int result = Integer.MIN_VALUE;
