@@ -1,5 +1,10 @@
 package leetCode;
 
+/**
+ * https://leetcode.com/problems/count-vowel-strings-in-ranges/
+ * 
+ * @author subhrajeetghosh
+ */
 public class CountVowelInRanges {
     // Bruteforce
     public int[] vowelStrings_2ndMethod(String[] words, int[][] queries) { // time complexity - O(k * n)
@@ -27,7 +32,7 @@ public class CountVowelInRanges {
     }
 
     // Optimized
-    public int[] vowelStrings(String[] words, int[][] queries) { //time complexity - O(n + k)
+    public int[] vowelStrings(String[] words, int[][] queries) { // time complexity - O(n + k)
         int[] prefixSum = new int[words.length];
         int totalCount = 0;
         for (int i = 0; i < words.length; i++) {
