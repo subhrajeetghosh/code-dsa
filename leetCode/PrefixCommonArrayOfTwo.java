@@ -42,4 +42,16 @@ public class PrefixCommonArrayOfTwo {
         }
         return result;
     }
+
+    // optimized approch
+    public int[] findThePrefixCommonArray_3rdMethod(int[] A, int[] B) { // time complexity - O(n)
+        Set<Integer> set = new HashSet<Integer>();
+        int[] result = new int[A.length];
+        for (int i = 0; i < A.length; i++) {
+            set.add(A[i]);
+            set.add(B[i]);
+            result[i] = 2 * (i + 1) - set.size();
+        }
+        return result;
+    }
 }
