@@ -30,4 +30,26 @@ public class FirstCompletePaintedRow {
         }
         return -1;
     }
+
+    public int firstCompleteIndex_2ndMethod(int[] arr, int[][] mat) { // time complexity - O(m*n + len)
+        Map<Integer, Integer> arrMap = new HashMap<Integer, Integer>();
+        for (int i = 0; i < arr.length; i++) {
+            arrMap.put(arr[i], i);
+        }
+        int[] rowArr = new int[mat.length];
+        int[] colArr = new int[mat[0].length];
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                int currentIndex = arrMap.get(mat[i][j]);
+                rowArr[i] = Math.max(rowArr[i], currentIndex);
+                colArr[j] = Math.max(colArr[j], currentIndex);
+            }
+        }
+        int result = Integer.MAX_VALUE;
+        for (int max : rowArr)
+            result = Math.min(result, max);
+        for (int max : colArr)
+            result = Math.min(result, max);
+        return result;
+    }
 }
