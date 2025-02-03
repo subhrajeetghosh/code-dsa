@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author subhrajeetghosh
  */
 public class ArrayIfSortedRotated {
-    public boolean check(int[] nums) { // time complexity - O(n)
+    public boolean check(int[] nums) { // time complexity - O(n log n)
         if (nums.length < 3)
             return true;
         int[] sortedArr = Arrays.copyOf(nums, nums.length);
@@ -33,6 +33,19 @@ public class ArrayIfSortedRotated {
                 index++;
                 if (index == nums.length)
                     index = 0;
+            }
+        }
+        return true;
+    }
+
+    public boolean check_2ndMethod(int[] nums) { //time complexity - O(n)
+        int k = 0;
+        for(int i=0; i<nums.length; i++) {
+            if(nums[i] > nums[(i+1) % nums.length]) {
+                k++;
+            }
+            if(k == 2) {
+                return false;
             }
         }
         return true;
