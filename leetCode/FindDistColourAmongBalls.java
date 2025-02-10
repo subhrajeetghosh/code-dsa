@@ -26,11 +26,10 @@ public class FindDistColourAmongBalls {
         return result;
     }
 
-    public int[] queryResults(int limit, int[][] queries) { //time complexity - O(n)
+    public int[] queryResults(int limit, int[][] queries) { // time complexity - O(n)
         int[] result = new int[queries.length];
         Map<Integer, Integer> mapBall = new HashMap<>();
         Map<Integer, Integer> mapColour = new HashMap<>();
-        Set<Integer> activeColours = new HashSet<>();
         for (int i = 0; i < queries.length; i++) {
             int ball = queries[i][0];
             int newColour = queries[i][1];
@@ -38,17 +37,15 @@ public class FindDistColourAmongBalls {
                 int oldColour = mapBall.get(ball);
                 mapColour.put(oldColour, mapColour.get(oldColour) - 1);
                 if (mapColour.get(oldColour) == 0) {
-                    activeColours.remove(oldColour);
+                    mapColour.remove(oldColour);
                 }
                 mapBall.put(ball, newColour);
                 mapColour.put(newColour, mapColour.getOrDefault(newColour, 0) + 1);
-                activeColours.add(newColour);
             } else {
                 mapBall.put(queries[i][0], newColour);
                 mapColour.put(newColour, mapColour.getOrDefault(newColour, 0) + 1);
-                activeColours.add(newColour);
             }
-            result[i] = activeColours.size();
+            result[i] = mapColour.size();
         }
         return result;
     }
