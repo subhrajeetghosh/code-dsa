@@ -1,7 +1,12 @@
 package leetCode;
 
+/**
+ * https://leetcode.com/problems/clear-digits
+ * 
+ * @author subhrajeetghosh
+ */
 public class ClearDigits {
-    public String clearDigits(String s) { //time complexity - O(n * d)
+    public String clearDigits(String s) { // time complexity - O(n * d)
         StringBuilder sb = new StringBuilder(s);
         while (true) {
             boolean isFound = false;
