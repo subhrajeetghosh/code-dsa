@@ -2,6 +2,7 @@ package leetCode;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 /**
  * https://leetcode.com/problems/max-sum-of-a-pair-with-equal-sum-of-digits
@@ -35,6 +36,28 @@ public class MaxSumPairWithEqualDigitSum {
                 result = Math.max(result, map.get(key).first + map.get(key).second);
             }
 
+        }
+        return result;
+    }
+
+    public int maximumSum_2ndMethod(int[] nums) {
+        @SuppressWarnings("unchecked")
+        PriorityQueue<Integer>[] group = (PriorityQueue<Integer>[]) new PriorityQueue[82];
+        for (int i = 0; i < 82; i++) {
+            group[i] = new PriorityQueue<>();
+        }
+        for (int i = 0; i < nums.length; i++) {
+            int currentDigitSum = getDigitSum(nums[i]);
+            group[currentDigitSum].add(nums[i]);
+            if (group[currentDigitSum].size() > 2) {
+                group[currentDigitSum].poll();
+            }
+        }
+        int result = -1;
+        for (PriorityQueue<Integer> pq : group) {
+            if (pq.size() == 2) {
+                result = Math.max(result, pq.poll() + pq.poll());
+            }
         }
         return result;
     }
