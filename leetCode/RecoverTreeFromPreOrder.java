@@ -1,5 +1,8 @@
 package leetCode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import commonfile.TreeNode;
 
 /**
@@ -33,5 +36,30 @@ public class RecoverTreeFromPreOrder {
         root.left = dfs(str, depth + 1);
         root.right = dfs(str, depth + 1);
         return root;
+    }
+
+    public TreeNode recoverFromPreorder_2ndMethod(String str) { // time complexity - O(n)
+        Map<Integer, TreeNode> map = new HashMap<>();
+        int index = 0;
+        while (index < str.length()) {
+            int level = 0, val = 0;
+            while (str.charAt(index) == '-') {
+                index++;
+                level++;
+            }
+            while (index < str.length() && Character.isDigit(str.charAt(index))) {
+                val = val * 10 + (str.charAt(index++) - '0');
+            }
+            TreeNode node = new TreeNode(val);
+            map.put(level, node);
+            if (level > 0) {
+                TreeNode parent = map.get(level - 1);
+                if (parent.left == null)
+                    parent.left = node;
+                else
+                    parent.right = node;
+            }
+        }
+        return map.get(0);
     }
 }
