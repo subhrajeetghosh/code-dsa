@@ -2,6 +2,8 @@ package leetCode;
 
 /**
  * https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/
+ * 
+ * @author subhrajeetghosh
  */
 public class NumberIsSumPowerThree {
     public boolean checkPowersOfThree(int n) { // time complexity - O(2^ log 3(n))
