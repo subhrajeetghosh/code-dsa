@@ -12,6 +12,7 @@ import java.util.List;
 public class CountCompleteComponent {
     public int countCompleteComponents(int n, int[][] edges) { // time complexity - O(n + m)
         int completeCount = 0;
+        @SuppressWarnings("unchecked")
         List<Integer>[] graph = new ArrayList[n];
         for (int i = 0; i < n; i++) {
             graph[i] = new ArrayList<>();
