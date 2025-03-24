@@ -7,6 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+/**
+ * https://leetcode.com/problems/number-of-ways-to-arrive-at-destination
+ * 
+ * @author subhrajeetghosh
+ */
 public class NumWaysMinCostArriveDest {
     Map<Integer, Integer> resultSet;
     int mod = 1000000007;
