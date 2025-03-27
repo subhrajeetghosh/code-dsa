@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author subhrajeetghosh
  */
 public class MinOperationsMakeUniGrid {
-    public int minOperations(int[][] grid, int x) {
+    public int minOperations(int[][] grid, int x) { //time complexity - O(k log k) where k = n * m
         int[] arr = new int[grid.length * grid[0].length];
         int index = 0;
         int rem = grid[0][0] % x;
