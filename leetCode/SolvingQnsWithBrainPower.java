@@ -31,9 +31,8 @@ public class SolvingQnsWithBrainPower {
         return currentPoints;
     }
 
-    //DP solution
-    public long mostPoints(int[][] questions) { // time complexity - O(n)
-        long result = 0l;
+    // DP solution
+    public long mostPoints_2ndMethod(int[][] questions) { // time complexity - O(n)
         int n = questions.length;
         long[] dp = new long[n + 1];
         for (int i = n - 1; i >= 0; i--) {

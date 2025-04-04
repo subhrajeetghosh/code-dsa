@@ -1,5 +1,7 @@
 package tree;
 
+import commonfile.TreeNode;
+
 /**
  * https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves
  * 
