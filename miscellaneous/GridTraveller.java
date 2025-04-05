@@ -1,3 +1,4 @@
+package miscellaneous;
 /**
  * You are a traveller in the 2D grid. You begin in the top-left corner and your goal is to travel 
  * to the right-bottom corner you can only move down or right
