@@ -8,7 +8,7 @@ package leetCode;
 public class SumAllSubSetXOR {
     int result = 0;
 
-    public int subsetXORSum(int[] nums) { // time copmplexity - O(2^n) - exponential time complexity
+    public int subsetXORSum(int[] nums) { // time copmplexity - O(2^n)
         subSetXOR(nums, 0, 0);
         return result;
     }
