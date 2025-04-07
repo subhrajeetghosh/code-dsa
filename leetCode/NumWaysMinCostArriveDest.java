@@ -54,6 +54,7 @@ public class NumWaysMinCostArriveDest {
         visited[index] = false;
     }
 
+    @SuppressWarnings("unchecked")
     public int countPaths_2ndMethod(int n, int[][] roads) { // time complexity - O((n + m)log n)
         int mod = 1000000007;
         List<int[]>[] graph = new ArrayList[n];

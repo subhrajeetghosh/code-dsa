@@ -47,7 +47,7 @@ public class LargestDivisibleSubSet {
     Map<Integer, List<Integer>> memo;
 
     //Memorization
-    public List<Integer> largestDivisibleSubset(int[] nums) { //time complexity - O(n^2)
+    public List<Integer> largestDivisibleSubset(int[] nums) { //time complexity - O(n^3)
         memo = new HashMap<Integer, List<Integer>>();
         Arrays.sort(nums);
         return backtrack(nums, -1, 0);
