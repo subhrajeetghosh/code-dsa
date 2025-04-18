@@ -45,7 +45,7 @@ public class CountEqualDivisiblePairInArray {
         int result = 0;
         Map<Integer, List<Integer>> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            map.computeIfAbsent(nums[i], x -> new ArrayList<>()).add(i);
+            map.computeIfAbsent(nums[i], _ -> new ArrayList<>()).add(i);
         }
         for (List<Integer> indexes : map.values()) {
             for (int i = 0; i < indexes.size(); i++) {
