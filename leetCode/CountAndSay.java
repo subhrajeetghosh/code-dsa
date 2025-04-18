@@ -27,6 +27,33 @@ public class CountAndSay {
         return currentNumberString;
     }
 
+    public String countAndSay_2ndMethod(int n) { // time complexity - O(2^n)
+        return rec(n);
+    }
+
+    private String rec(int n) {
+        if (n == 1) {
+            return "1";
+        }
+        String previousStr = rec(n - 1);
+        int count = 1;
+        char currentChar = previousStr.charAt(0);
+        String result = "";
+        for (int i = 1; i < previousStr.length(); i++) {
+            if (currentChar == previousStr.charAt(i)) {
+                count++;
+            } else {
+                result += String.valueOf(count);
+                count = 1;
+                result += String.valueOf(currentChar);
+                currentChar = previousStr.charAt(i);
+            }
+        }
+        result += String.valueOf(count);
+        result += String.valueOf(currentChar);
+        return result;
+    }
+
     public static void main(String[] args) {
         CountAndSay obj = new CountAndSay();
         System.out.println(obj.countAndSay(4));
