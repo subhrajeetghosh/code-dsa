@@ -78,4 +78,27 @@ public class CountNumberFairPairs {
         }
         return right;
     }
+
+    private int findIndex(int[] nums, int left, int element) {
+        int right = nums.length - 1;
+        while(left <= right) {
+            int mid = left + (right - left) / 2;
+            if(nums[mid] >= element) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return left;
+    }
+    public long countFairPairs_4thMethod(int[] nums, int lower, int upper) {
+        Arrays.sort(nums);
+        long pair = 0l;
+        for(int i=0; i<nums.length; i++) {
+            int lowerBound = findIndex(nums, i+1, lower - nums[i]);
+            int upperBound = findIndex(nums, i+1, upper - nums[i] + 1);
+            pair += (long)(upperBound - lowerBound);
+        }
+        return pair;
+    }
 }
