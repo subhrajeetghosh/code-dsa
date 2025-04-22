@@ -56,12 +56,11 @@ public class CountHiddenSequences {
     }
 
     public int numberOfArrays_3rdMethod(int[] differences, int lower, int upper) { // time complexity - O(n)
-        int left = 0, right = 0, currentLeft = 0, currentRight = 0;
+        int left = 0, right = 0, currentNum = 0;
         for (int i = 0; i < differences.length; i++) {
-            currentLeft += differences[i];
-            currentRight += differences[i];
-            left = Math.min(left, currentLeft);
-            right = Math.max(right, currentRight);
+            currentNum += differences[i];
+            left = Math.min(left, currentNum);
+            right = Math.max(right, currentNum);
             if (right - left > upper - lower)
                 return 0;
         }
