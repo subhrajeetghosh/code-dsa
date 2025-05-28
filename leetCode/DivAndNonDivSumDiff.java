@@ -17,4 +17,8 @@ public class DivAndNonDivSumDiff {
         }
         return sumNonDivM - sumDivM;
     }
+
+    public int differenceOfSums_2ndMethod(int n, int m) { // time complexity - O(1)
+        return ((n * (n + 1)) / 2) - 2 * (((n / m) * ((n / m) + 1) / 2) * m);
+    }
 }
