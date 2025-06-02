@@ -2,6 +2,8 @@ package graph;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Set;
 
 /**
@@ -37,6 +39,42 @@ public class ClosestNodeOfTwoNodes {
         distArr[currentNode] = currentDist;
         if (edges[currentNode] != -1 && !visited.contains(edges[currentNode])) {
             dfs(edges, edges[currentNode], currentDist + 1, distArr, visited);
+        }
+    }
+
+    public int closestMeetingNode_2ndMethod(int[] edges, int node1, int node2) { // time complexity - O(n)
+        int[] dist1 = new int[edges.length];
+        int[] dist2 = new int[edges.length];
+        Arrays.fill(dist1, -1);
+        Arrays.fill(dist2, -1);
+        bfs(edges, node1, dist1);
+        bfs(edges, node2, dist2);
+        int result = -1, minDist = Integer.MAX_VALUE;
+        for (int i = 0; i < edges.length; i++) {
+            if (dist1[i] != -1 && dist2[i] != -1) {
+                int currentMinDist = Math.max(dist1[i], dist2[i]);
+                if (currentMinDist < minDist) {
+                    minDist = currentMinDist;
+                    result = i;
+                }
+            }
+        }
+        return result;
+    }
+
+    private void bfs(int[] edges, int node, int[] dist) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(node);
+        int currentDist = 0;
+        boolean[] visited = new boolean[edges.length];
+        while (!queue.isEmpty()) {
+            int currentNode = queue.poll();
+            dist[currentNode] = currentDist++;
+            visited[currentNode] = true;
+            int nextNode = edges[currentNode];
+            if (nextNode != -1 && !visited[nextNode]) {
+                queue.add(nextNode);
+            }
         }
     }
 }
