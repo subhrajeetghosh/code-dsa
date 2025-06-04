@@ -39,7 +39,7 @@ public class SortByCharFreq {
         }
         Map<Integer, StringBuilder> treeMap = new TreeMap<>(Collections.reverseOrder());
         for (char key : map.keySet()) {
-            treeMap.computeIfAbsent(map.get(key), k -> new StringBuilder())
+            treeMap.computeIfAbsent(map.get(key), _ -> new StringBuilder())
                     .append(String.valueOf(key).repeat(map.get(key)));
         }
         StringBuilder sb = new StringBuilder();
