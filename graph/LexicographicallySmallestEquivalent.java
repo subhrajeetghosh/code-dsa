@@ -86,4 +86,36 @@ public class LexicographicallySmallestEquivalent {
         }
         return parent[num];
     }
+
+    //using Map
+    public String smallestEquivalentString_3rdMethod(String s1, String s2, String baseStr) {
+        Map<Character, Character> parent = new HashMap<>();
+        for(char ch = 'a'; ch<='z'; ch++) {
+            parent.put(ch, ch);
+        }
+        for(int i=0; i<s1.length(); i++) {
+            union(parent, s1.charAt(i), s2.charAt(i));
+        }
+        StringBuilder result = new StringBuilder();
+        for(int i=0; i<baseStr.length(); i++) {
+            result.append(find(parent, baseStr.charAt(i)));
+        }
+        return result.toString();
+    }
+    private char find(Map<Character, Character> parent, char ch) {
+        if(parent.get(ch) != ch) {
+            parent.put(ch, find(parent, parent.get(ch)));
+        }
+        return parent.get(ch);
+    }
+    private void union(Map<Character, Character> parent, char ch1, char ch2) {
+        char parent1 = find(parent, ch1);
+        char parent2 = find(parent, ch2);
+        if(parent1 == parent2) return;
+        if(parent1 < parent2) {
+            parent.put(parent2, parent1);
+        } else {
+            parent.put(parent1, parent2);
+        }
+    }
 }
